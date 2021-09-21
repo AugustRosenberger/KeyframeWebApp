@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<link rel="stylesheet"
+		type="text/css"
+		href="keyframeCSS.css"/>
+<body>
+
+
+
+<div class="box1" id ="box1">
+</div>
+
+
+
+
+
+<button type="button" onclick="moveBlock()">CLICK ME!</button>
+
+
+<script>
+
+
+
+
+var count = 1;
+
+//This function moves the lock to each corner according to a counter, and changes it to a random color
+function moveBlock(){
+   
+   
+   
+ if(count == 1){
+ document.getElementById("box1").style.transform = "translate( "  + getWidthL() + "px  , 0px )";
+ document.getElementById("box1").style.backgroundColor = generateRandomColor();
+ count = 2;}
+ else if(count == 2){
+ document.getElementById("box1").style.transform = "translate( "  + getWidthL() + "px  , "  + getHeight() + "px )";
+ document.getElementById("box1").style.backgroundColor = generateRandomColor();
+ count = 3;}
+ else if(count == 3){
+ document.getElementById("box1").style.transform = "translate(  0px  , "  + getHeight() + "px )";
+ document.getElementById("box1").style.backgroundColor = generateRandomColor();
+ count = 4;}
+ 
+ else if(count == 4){
+ document.getElementById("box1").style.transform = "translate( 0px  , 0px )";
+ document.getElementById("box1").style.backgroundColor = generateRandomColor();
+ count = 1;}
+ }
+ 
+
+
+
+
+function getHeight(){
+var wide = document.documentElement.clientHeight;
+var box = 110; 
+var sum = wide-box;
+
+return sum;
+}
+
+function getWidthL(){
+var wide = document.documentElement.clientWidth;
+var box = 110; 
+var sum = wide-box;
+
+return sum;
+}
+
+function getWidthR(){
+var wide = document.documentElement.clientWidth;
+var box = 100; 
+var sum = wide;
+
+return sum;
+}
+
+function generateRandomColor(){
+    var randomColor = '#'+Math.floor(Math.random()*16777215).toString(16);
+    return randomColor;
+    //random color will be freshly served
+}
+
+ 
+
+
+</script>
+
+</body>
+</html>

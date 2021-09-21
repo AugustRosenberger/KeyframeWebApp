@@ -1,0 +1,42 @@
+div{
+	width: 100px;
+	height: 100px;
+	background-color: red;
+	position: absolute;
+	
+	
+}
+button{
+	position:absolute;
+	top: 50%;
+	left: 50%;
+}
+
+
+@keyframes slideLeft{
+	
+	from { left:0; 
+			right:100vw;
+			background-color:red;}
+    to   { right:0; 
+			left:100vw - 100px;
+			background-color:yellow;} 	
+}
+
+
+
+.box1{
+	position: absolute;
+	visibility: visible;
+	animation-fill-mode: forwards;
+	
+	transform:null;
+	transition-duration: 4s;
+}
+
+
+
+body{
+	background-color: #262626;
+	
+}
